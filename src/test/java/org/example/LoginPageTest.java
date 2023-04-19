@@ -9,7 +9,7 @@ public class LoginPageTest {
     WebDriver driver;
 
     @Test
-    public void loginVerification(){
+    public void loginVerification() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -17,8 +17,12 @@ public class LoginPageTest {
         driver.manage().window().maximize();
 
         LoginPage login = new LoginPage(driver);
-        login.enterUsername();
-        login.enterPassword();
+        login.enterUsername("Standard_user");
+        Thread.sleep(2000);
+
+        login.enterPassword("Standard_pass");
+        Thread.sleep(2000);
+
         login.LoginButton();
 
         driver.quit();

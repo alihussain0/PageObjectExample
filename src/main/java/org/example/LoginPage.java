@@ -12,12 +12,15 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public void enterUsername(){
+    public void enterUsername(String uname) throws InterruptedException {
         driver.findElement(username).sendKeys("standard_user");
+        Thread.sleep(2000);
     }
 
-    public void enterPassword(){
+    public void enterPassword(String upass) throws InterruptedException {
         driver.findElement(pass).sendKeys("password");
+        Thread.sleep(2000);
+
     }
     public void LoginButton(){
         driver.findElement(login).click();
